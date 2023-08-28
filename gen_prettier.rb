@@ -9,7 +9,7 @@ class GenPrettier < Formula
 
   on_macos do
     url "https://github.com/liv7c/gen_prettier/releases/download/v0.7/gen_prettier_Darwin_all.tar.gz"
-    sha256 "79f32434102936550ea75e807c7baf9e180de36a11659b541946914c14149000"
+    sha256 "2d3040a57cf01ac43c99b0113f6afd358a8ab04f42068902fe659748ac75d841"
 
     def install
       bin.install "gen_prettier"
@@ -17,17 +17,17 @@ class GenPrettier < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/liv7c/gen_prettier/releases/download/v0.7/gen_prettier_Linux_arm64.tar.gz"
-      sha256 "88a30f1fe5050f5c9752b647385ff30e1725a84f28c11d3bbc0546a9b79dbcd8"
+    if Hardware::CPU.intel?
+      url "https://github.com/liv7c/gen_prettier/releases/download/v0.7/gen_prettier_Linux_x86_64.tar.gz"
+      sha256 "c8144e57de0c2e197bf1414808c0de29952d0e18235ab5e94534b36c2522a3ab"
 
       def install
         bin.install "gen_prettier"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/liv7c/gen_prettier/releases/download/v0.7/gen_prettier_Linux_x86_64.tar.gz"
-      sha256 "b2daccaefad72797357d661e8e2546681cb546f1f54f58da70a08d90dac0162a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/liv7c/gen_prettier/releases/download/v0.7/gen_prettier_Linux_arm64.tar.gz"
+      sha256 "ccffa06e4fb4894e71726e65001f7f7e4c8eedc1b8eb5fbd934ba90d542a6450"
 
       def install
         bin.install "gen_prettier"
